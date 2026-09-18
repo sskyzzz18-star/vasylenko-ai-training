@@ -1,0 +1,265 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "0f2009ed-0297-4ccf-8317-2f5ae3be01de",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2ca29a26-ecb2-4aab-b9ea-755ec014aaea",
+      "name": "Webhook",
+      "webhookId": "0f2009ed-0297-4ccf-8317-2f5ae3be01de"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8ef5f3aa-43ee-4bcf-a2dc-5f943f41661f",
+              "name": "body.name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "c239bb6c-02d4-49b0-a8d2-3f10a55d2cac",
+              "name": "body.task",
+              "value": "={{ $json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "ab37bb40-c7db-4cb0-9235-51db884a7334",
+              "name": "body.contact",
+              "value": "={{ $json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "2a4eb45b-b075-41b1-874d-d65d46375c32",
+              "name": "body.source",
+              "value": "={{ $json.body.source }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "34f78b47-6750-4108-bb26-e2d472135eba",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "b199658f-df9d-449e-9741-0a733d2fedbb",
+              "leftValue": "={{ $json.body.contact }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "f250131d-ad24-4650-85a0-7438857d30b1",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4d4f1f20-0c4a-462b-a52d-8089080ad97e",
+              "name": "body.name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "35c73757-a33a-4802-b237-d333fd7c75e4",
+              "name": "body.task",
+              "value": "={{ $json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "6e8d28c5-0b3d-4c6b-96ed-b281f20128df",
+              "name": "body.contact",
+              "value": "={{ $json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "2a8546fe-a964-4b33-9405-0739cfdf36af",
+              "name": "body.source",
+              "value": "={{ $json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "4a9920d2-a6e4-480c-8689-6b6dfcfc7070",
+              "name": "body.status",
+              "value": "new",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        528,
+        -96
+      ],
+      "id": "eb31acc5-b6a1-49d1-93c9-498d721879a1",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "07502cf1-44e1-4882-924f-a9d354ef0f36",
+              "name": "status",
+              "value": "incomplete",
+              "type": "string"
+            },
+            {
+              "id": "4d54f41d-00b9-4c43-81f6-a56bf7db66ae",
+              "name": "message",
+              "value": "Contact is required",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        528,
+        96
+      ],
+      "id": "55347837-7b8f-45f8-8e4f-8fe5b027b2cc",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        768,
+        -96
+      ],
+      "id": "cbfdbf99-7966-4604-b19d-c72c863815da",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "6a9017fd-0648-46a6-88f6-fb3f08e05e83",
+  "meta": {
+    "instanceId": "9b433cfefa84f5b14e686b4e0f831fd33879e795bea775f80fc56a4d60ebf440"
+  },
+  "nodeGroups": [],
+  "id": "lLPauWIvp5AIE2Nk",
+  "tags": []
+}
