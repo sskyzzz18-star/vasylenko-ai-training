@@ -1,0 +1,518 @@
+{
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "a80c38d8-1fd2-41df-af24-f7fe517a5d5e",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3a7d94d6-3731-4614-8a8d-ce2c182082a6",
+      "name": "Webhook",
+      "webhookId": "a80c38d8-1fd2-41df-af24-f7fe517a5d5e"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "70c37792-3887-4bdb-aef8-d773c9912ccb",
+              "name": "body.name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "74afca26-b8e8-4149-a1b8-d7c87b35d556",
+              "name": "body.task",
+              "value": "={{ $json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "15fe12d3-8e6e-46b3-a4c5-c8f4b8a7fce4",
+              "name": "body.company",
+              "value": "={{ $json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "11ca501c-b312-4ed2-92f1-3e6288292f15",
+              "name": "body.contact",
+              "value": "={{ $json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "5d896c9f-7597-462d-9acb-cf05e9f865d4",
+              "name": "body.source",
+              "value": "={{ $json.body.source }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "76b26d21-6a2c-4f3c-a3d3-f23656ce3f9b",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "d6eb0ff8-386e-43a4-ba52-614386b03b2b",
+              "leftValue": "={{ $('Webhook').item.json.body.name }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "4fbd9d12-d8be-49bb-ad79-5d16630361eb",
+              "leftValue": "={{ $('Webhook').item.json.body.contact }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "c8914bd4-ff16-48d7-b6b3-513270de88ac",
+              "leftValue": "={{ $('Webhook').item.json.body.task }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "b5603710-8f52-4711-b796-ab681b94b78e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "da375d19-89cf-4b78-8e50-27ce381a5de4",
+              "name": "body.name",
+              "value": "={{ $('Webhook').item.json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "7ee6d9f7-67b4-428d-bd77-2ab24e7397e0",
+              "name": "body.task",
+              "value": "={{ $('Webhook').item.json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "35bfd2b1-569d-4682-a827-007a7a771c81",
+              "name": "body.company",
+              "value": "={{ $('Webhook').item.json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "3d884b19-6e72-497b-96be-698584552de3",
+              "name": "body.contact",
+              "value": "={{ $('Webhook').item.json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "9ea836b7-969c-4d27-8bd5-e1067f312404",
+              "name": "body.source",
+              "value": "={{ $('Webhook').item.json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "2ab9d8f4-e3ee-454a-bccd-50ac23e2bc66",
+              "name": "body.lead_status",
+              "value": "ready",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        672,
+        -96
+      ],
+      "id": "792198dc-a5d9-43e4-b86a-6d5b55de51b6",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "02c1ef14-5e6f-455e-ad57-922d4b1d12be",
+              "leftValue": "={{ $('Webhook').item.json.body.task }}",
+              "rightValue": "urgent",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        896,
+        -96
+      ],
+      "id": "e0d7ff38-5169-4d68-b32c-52b63227806c",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ad2723d8-1cbd-4d0d-b67f-2f7b747f90b6",
+              "name": "body.name",
+              "value": "={{ $('Webhook').item.json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "6b346090-b230-425e-90f7-f32bfaf690d7",
+              "name": "body.task",
+              "value": "={{ $('Webhook').item.json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "5e0a53f4-b40c-462d-a421-09b336206b7e",
+              "name": "body.company",
+              "value": "={{ $('Webhook').item.json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "57014101-c5fc-41c1-b787-a7c28a612489",
+              "name": "body.contact",
+              "value": "={{ $('Webhook').item.json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "f7c4bc90-e42b-4f6c-8596-4c7411082ddd",
+              "name": "body.source",
+              "value": "={{ $('Webhook').item.json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "86e279a7-c823-4db7-b620-72e0dac2d322",
+              "name": "body.lead_status",
+              "value": "incomplete",
+              "type": "string"
+            },
+            {
+              "id": "f43fab27-8f3c-453c-863a-846ee6b700c5",
+              "name": "body.priority",
+              "value": "unknown",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        672,
+        96
+      ],
+      "id": "38d63f04-9573-4d58-a688-22aed3de80bf",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "614a4580-3164-4ec1-ad57-3832d1d0a9ba",
+              "name": "body.name",
+              "value": "={{ $('Webhook').item.json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "c815f75a-fa8a-4f96-ab14-75860a552abd",
+              "name": "body.task",
+              "value": "={{ $('Webhook').item.json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "cb917546-0599-4f82-aeb9-bc082656ebaa",
+              "name": "body.company",
+              "value": "={{ $('Webhook').item.json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "631127ee-0f00-4144-abdd-79049f9a272b",
+              "name": "body.contact",
+              "value": "={{ $('Webhook').item.json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "ac15b09f-8d96-45f7-b950-960b84dad119",
+              "name": "body.source",
+              "value": "={{ $('Webhook').item.json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "783b8aec-655e-4717-9f9f-86c3ae2c9736",
+              "name": "body.lead_status",
+              "value": "ready",
+              "type": "string"
+            },
+            {
+              "id": "50a4cec8-ae2e-40c3-9b9c-db236bb0f76f",
+              "name": "body.priority",
+              "value": "high",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1120,
+        -192
+      ],
+      "id": "f2312429-cbda-459c-be27-fac2701324ab",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "55ee3fc4-0bfd-41fd-9bd8-7d77b002e0fe",
+              "name": "body.name",
+              "value": "={{ $('Webhook').item.json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f6ebe10f-2297-487a-bdc1-97d9d33eaa2a",
+              "name": "body.task",
+              "value": "={{ $('Webhook').item.json.body.task }}",
+              "type": "string"
+            },
+            {
+              "id": "9d56907f-8559-4274-9cbd-b494df0dca1b",
+              "name": "body.company",
+              "value": "={{ $('Webhook').item.json.body.company }}",
+              "type": "string"
+            },
+            {
+              "id": "4b078aa9-e14e-4703-83a6-c081083b204d",
+              "name": "body.contact",
+              "value": "={{ $('Webhook').item.json.body.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "e1f34b2c-e4cb-49d1-beb0-81db63c8eeec",
+              "name": "body.source",
+              "value": "={{ $('Webhook').item.json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "da1ad5d1-64dc-49da-bbbd-9d3a5531bd4f",
+              "name": "body.lead_status",
+              "value": "ready",
+              "type": "string"
+            },
+            {
+              "id": "5279cab6-28be-4eed-8226-d2281d64f0f1",
+              "name": "body.priority",
+              "value": "normal",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "f714b8ea-c6b3-4710-9f50-752cc385883d",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1344,
+        0
+      ],
+      "id": "dcd248cf-4d8b-48a9-965a-9f41a4c425fa",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "5a10c558-5b5e-47c9-88d9-828181ea66e1",
+  "meta": {
+    "instanceId": "9b433cfefa84f5b14e686b4e0f831fd33879e795bea775f80fc56a4d60ebf440"
+  },
+  "nodeGroups": [],
+  "id": "VPzfF77yGgGEHJ5w",
+  "tags": []
+}
