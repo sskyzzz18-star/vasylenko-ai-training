@@ -114,3 +114,57 @@ feature/VAI-005-postman-qa
 
 
 
+
+
+\## Expected HTTP Statuses
+
+
+
+These are expected outcomes for QA preparation, not verified API responses.
+
+
+
+\- GET / — expected 200 OK
+
+\- GET /api/v1/health — expected 200 OK
+
+\- POST /api/v1/leads (valid lead) — expected 2xx success; exact code requires API contract confirmation
+
+\- POST /api/v1/leads (missing name) — expected validation error (400 or 422, pending confirmation)
+
+\- POST /api/v1/leads (missing task) — expected validation error (400 or 422, pending confirmation)
+
+\- POST /api/v1/leads (empty contact) — expected validation error (400 or 422, pending confirmation)
+
+\- POST /api/v1/leads (name over 100 characters) — expected validation error (400 or 422, pending confirmation)
+
+\- POST /api/v1/leads (invalid JSON) — expected client error (400 or 422, pending confirmation)
+
+\- Duplicate lead — expected behavior requires API contract confirmation
+
+
+
+\## Validation Results
+
+
+
+\- JSON syntax: five valid fixtures checked successfully.
+
+\- Invalid JSON fixture: intentionally malformed.
+
+\- Name length: 110 characters confirmed.
+
+\- Postman collection: prepared for QA review.
+
+\- Actual HTTP requests: NOT EXECUTED.
+
+\- Actual response statuses and fields: NOT VERIFIED.
+
+\- Backend access: NOT AVAILABLE.
+
+
+
+Final execution and response assertions require an approved QA environment and confirmed API contract.
+
+
+
