@@ -1,5 +1,7 @@
 {
   "name": "Test User",
-  "contact": "test@example.com",
-  "task": "Test lead for QA validation"
+  "company": "Demo Company",
+  "task": "Test lead for QA validation",
+  "contactMethod": "email",
+  "contact": "test@example.com"
 }

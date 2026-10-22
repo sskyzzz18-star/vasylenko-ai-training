@@ -1,7 +1,7 @@
 ﻿{
-  "name": "Anna Test",
-  "company": "Demo Company",
-  "task": "I need help with AI automation.",
-  "contactMethod": "email",
-  "contact": ""
+    "name":  "Test User",
+    "company":  "Demo Company",
+    "task":  "Test lead for QA validation",
+    "contactMethod":  "email",
+    "contact":  ""
 }
