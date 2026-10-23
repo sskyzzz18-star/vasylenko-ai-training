@@ -15,11 +15,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -51,11 +47,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -95,7 +87,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{base_url}}/"
+                                                                  "raw":  ""
                                                               }
                                                   },
                                       "response":  [
@@ -110,7 +102,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{base_url}}/api/v1/health"
+                                                                  "raw":  ""
                                                               }
                                                   },
                                       "response":  [
@@ -127,11 +119,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -163,11 +151,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -199,11 +183,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -231,15 +211,371 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "Post name too long",
+                                      "name":  "Post missing company",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
                                                                      {
                                                                          "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
                                                                      }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post missing contact method",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post empty name",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"\",\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post empty company",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post company too long",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post task too long",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post wrong field type",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": 12345,\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post empty object",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n \r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post null name",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": null,\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post whitespace name",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json",
+                                                                         "type":  "text"
+                                                                     }
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"   \",\r\n  \"company\": \"Demo Company\",\r\n  \"task\": \"Test lead for QA validation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "Post name too long",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -271,11 +607,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "type":  "text",
-                                                                         "value":  "application/json"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
