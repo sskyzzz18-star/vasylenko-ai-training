@@ -2,7 +2,7 @@
     "info":  {
                  "_postman_id":  "5c548335-d93e-4302-a3bf-99bfb1ad4ef7",
                  "name":  "Vasylenko AI QA v1",
-                 "description":  "Vasylenko AI API QA collection. Includes lead creation, health checks, and negative test scenarios. Prepared for offline QA review; backend responses have not been verified.",
+                 "description":  "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\nâ€¢ Group related requests\nâ€¢ Test your API in real-world scenarios\nâ€¢ Document and share your requests\n\nUpdate the name and overview whenever youâ€™re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
                  "schema":  "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
                  "_exporter_id":  "58304369"
              },
@@ -15,11 +15,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -47,15 +43,11 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "POST Duplicate Lead",
+                                      "name":  "POST duplicate Lead",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -94,7 +86,9 @@
                                                       "header":  [
 
                                                                  ],
-                                                      "url":  "{{base_url}}/"
+                                                      "url":  {
+                                                                  "raw":  ""
+                                                              }
                                                   },
                                       "response":  [
 
@@ -107,7 +101,9 @@
                                                       "header":  [
 
                                                                  ],
-                                                      "url":  "{{base_url}}/api/v1/health"
+                                                      "url":  {
+                                                                  "raw":  ""
+                                                              }
                                                   },
                                       "response":  [
 
@@ -123,11 +119,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -159,11 +151,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -195,11 +183,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -231,11 +215,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -267,11 +247,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -303,11 +279,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -339,11 +311,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -371,15 +339,11 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "Post company too long",
+                                      "name":  "Post empty company too long",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -411,11 +375,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -447,11 +407,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -479,15 +435,11 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "Post empty object",
+                                      "name":  "Post empty objects",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -515,15 +467,11 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "Post null name",
+                                      "name":  "Post nule name",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -555,11 +503,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -591,11 +535,7 @@
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
@@ -623,19 +563,79 @@
                                                    ]
                                   },
                                   {
-                                      "name":  "Post Invalid JSON",
+                                      "name":  "Post Invaliv JSON",
                                       "request":  {
                                                       "method":  "POST",
                                                       "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json",
-                                                                         "type":  "text"
-                                                                     }
+
                                                                  ],
                                                       "body":  {
                                                                    "mode":  "raw",
                                                                    "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"Test Company\",\r\n  \"task\": \"AI automation\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"test@example.com\"\r\n",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "TC-014 â€” Contact Method Too Long.",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"Test Company\",\r\n  \"task\": \"Test task\",\r\n  \"contactMethod\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n  \"contact\": \"test@example.com\"\r\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               }
+                                                               },
+                                                      "url":  {
+                                                                  "raw":  "{{base_url}}/api/v1/leads",
+                                                                  "host":  [
+                                                                               "{{base_url}}"
+                                                                           ],
+                                                                  "path":  [
+                                                                               "api",
+                                                                               "v1",
+                                                                               "leads"
+                                                                           ]
+                                                              }
+                                                  },
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "name":  "TC-015 â€” Contact Too Long",
+                                      "request":  {
+                                                      "method":  "POST",
+                                                      "header":  [
+
+                                                                 ],
+                                                      "body":  {
+                                                                   "mode":  "raw",
+                                                                   "raw":  "{\r\n  \"name\": \"Test User\",\r\n  \"company\": \"Test Company\",\r\n  \"task\": \"Test task\",\r\n  \"contactMethod\": \"email\",\r\n  \"contact\": \"{{too_long_contact}}\"\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -672,6 +672,10 @@
                      {
                          "key":  "base_url",
                          "value":  ""
+                     },
+                     {
+                         "key":  "too_long_contact",
+                         "value":  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                      }
                  ]
 }

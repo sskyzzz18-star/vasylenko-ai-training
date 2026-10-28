@@ -1,4 +1,4 @@
-﻿# VAI-005 — API Regression Checklist
+# VAI-005 — API Regression Checklist
 
 ## General Information
 - Project: Vasylenko AI
@@ -50,3 +50,18 @@
 - No real API requests have been executed.
 - Exact response statuses require contract confirmation.
 - Do not mark checks complete without evidence.
+
+# 7. Duplicate Lead
+[ ] Submit the same lead twice in the approved QA environment
+[ ] Verify duplicate handling against the confirmed API contract
+
+# 8. Error Handling
+[ ] Verify validation errors for invalid requests
+[ ] Verify error status codes against the confirmed API contract
+[ ] Verify error response structure after contract confirmation
+
+# 9. Regression After Backend Updates
+[ ] Confirm the Backend version before testing
+[ ] Re-run smoke and regression tests after updates
+[ ] Compare results with the confirmed API contract
+[ ] Record any new defects in the Bug Report

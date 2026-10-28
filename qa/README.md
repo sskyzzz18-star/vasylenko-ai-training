@@ -1,4 +1,4 @@
-\# VASYLENKO AI — VAI-005 Postman QA Preparation
+﻿\# VASYLENKO AI — VAI-005 Postman QA Preparation
 
 
 
@@ -148,7 +148,7 @@ These are expected outcomes for QA preparation, not verified API responses.
 
 
 
-\- JSON syntax: five valid fixtures checked successfully.
+\- JSON fixtures: 19 total (18 valid JSON files and 1 intentionally invalid JSON file).
 
 \- Invalid JSON fixture: intentionally malformed.
 
@@ -187,4 +187,16 @@ Final execution and response assertions require an approved QA environment and c
 - Postman collection prepared and reviewed.
 - Actual API responses have NOT been verified.
 - Backend execution requires an approved QA environment.
+
+
+
+## Final QA Inventory
+
+- API test cases: 20.
+- JSON fixtures: 19 total (18 valid, 1 intentionally invalid).
+- Postman requests: 21 total.
+- Postman folders: Leads 2, Health Checks 2, Negative Tests 17, Telegram Onboarding 0.
+- TC-014 and TC-015: separate JSON fixtures and Postman requests prepared.
+- API execution: NOT RUN.
+- Unconfirmed API responses: PENDING CONTRACT CONFIRMATION.
 
