@@ -263,6 +263,3 @@ pm.test("Health endpoint returns expected status", function () {
 
 
 NOT RUN — QA environment unavailable.
-
-
-
